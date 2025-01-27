@@ -17,6 +17,6 @@ int main()
    cout << "My name is Mikayla Blakey" << endl;
    cout << "I enjoy working with epoxy resin, my uv resin printer, beadwork and more to design products for my business." << endl;
    cout << "My favorite color is pink!" << endl;
-   cout<< endl;
+   cout << endl;
    return 0;
 }
