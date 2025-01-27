@@ -19,7 +19,7 @@ int main() {
 // print all the information about the orchard
 // TODO
     cout << "Welcome to " << name << "'s apple orchard" << endl;
-    cout << "We have " << apples << " apples, for " << cost_each << " each, your total is $" << total << " dollars.";
+    cout << "We have " << apples << " apples, for $" << cost_each << " each, your total is $" << total << " dollars.";
     cout << endl;
     cout << endl; 
 
