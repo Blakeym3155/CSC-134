@@ -1,5 +1,5 @@
 // CSC-134
-// M1T2
+// M1T2- More about me
 // Mikayla Blakey
 // 1/27/25
 
