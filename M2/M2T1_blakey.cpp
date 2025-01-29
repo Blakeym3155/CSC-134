@@ -4,7 +4,7 @@
 // 1/29/25
 
 //ask for user input
-
+//commented out past code from M1Lab I did not need 
 
 #include <iostream>
 #include <iomanip>
@@ -18,14 +18,14 @@ int main() {
 // price per apple
     double cost_each = 0.25;
 // calculate the total price of the apples
-    //int buyer_apple_amount;
+    //int apple_amount;
    // double buyer_apple_total = buyer_apple_amount * cost_each;
 // calculate the total price of the apples
 
 // print all the information about the orchard
     cout << "Welcome to " << name << "'s apple orchard" << endl;
     //cout << "We have " << apples << " apples for $" << cost_each << " each making your grand total $" << total << " dollars!";
-    cout << endl;
+    //cout << endl;
 
 //**adding to past code for assignment**
 
@@ -49,7 +49,6 @@ int main() {
     cout << "Thank you for coming by, " << buyer_name << "!" << endl; 
     cout << endl;
     cout << endl;
-
 
     return 0; //no errors
 }
