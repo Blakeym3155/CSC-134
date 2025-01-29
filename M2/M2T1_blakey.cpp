@@ -37,7 +37,7 @@ int main() {
 // you have to add #include <iomanip> with the other #include statement at the top
     cout << setprecision(2) << fixed;  
 //greet customer and interact below
-    cout << "Hello, what is your name?";
+    cout << "Hello, what is your name? " << endl;
     cin >> buyer_name;
 //ask how many apples are desired, and tell the cost and amount available
     cout << "Welcome in " << buyer_name << ", We have " << apples << " apples to choose from, with each costing $" << cost_each << ". How many would you like to purchase?" << endl;
