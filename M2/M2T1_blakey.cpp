@@ -34,6 +34,8 @@ int main() {
     cout << "Hello, what is your name?";
     cin >> buyer_name;
     cout << "Thank you for coming by, " << buyer_name << "!";
+    cout << endl;
+    cout << endl;
 
 
     return 0; //no errors
