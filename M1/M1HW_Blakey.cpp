@@ -1,7 +1,8 @@
 // CSC 134
-// M1LAB
+// M1HW - adding to apple orchard
 // Mikayla Blakey
-// 1/27/25
+// 1/29/25
+
 #include <iostream>
 using namespace std;
 int main() {
