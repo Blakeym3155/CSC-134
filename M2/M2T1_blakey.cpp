@@ -7,18 +7,20 @@
 
 
 #include <iostream>
-
+#include <iomanip>
 using namespace std;
 
 int main() {
 // The owner’s name
     string name = "Mikayla";
 // number of apples owned
-    int apples = 40;
+    int apples = 100;
 // price per apple
     double cost_each = 0.25;
 // calculate the total price of the apples
-    double total = apples * cost_each;
+    double buyer_apple_amount;
+    double buyer_apple_toal;
+    double buyer_apple_total = buyer_apple_amount * cost_each;
 // calculate the total price of the apples
 
 // print all the information about the orchard
@@ -29,11 +31,21 @@ int main() {
 
     string buyer_name; //find customers name
     int apples_to_buy; //how many apples do they want?
-
+    double buyer_apple_total; //we asked for user input
+    double buyer_apple_amount;
+//this line sets cout for doubles to 2 decimal places
+// you have to add #include <iomanip> with the other #include statement at the top
+    cout << setprecision(2) << fixed;
+//equation to get buyers total 
+    buyer_apple_total = buyer_apple_amount * cost_each;
 //greet customer and interact below
     cout << "Hello, what is your name?";
     cin >> buyer_name;
-    cout << "Thank you for coming by, " << buyer_name << "!";
+    //ask how many apples are desired, and tell the cost and amount available
+    cout << "Welcome in " << buyer_name << ", We have " << apples << " apples, with each costing $" << cost_each << ". How many would you like to purchase?" << endl;
+    cin >> buyer_apple_amount; 
+    cout << "Alrighty, your total is $" << buyer_apple_total << " dollars, for " << buyer_apple_amount << "apples!" << endl; 
+    cout << "Thank you for coming by, " << buyer_name << "!" << endl; 
     cout << endl;
     cout << endl;
 
