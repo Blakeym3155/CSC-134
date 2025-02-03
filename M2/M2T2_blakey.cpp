@@ -10,10 +10,11 @@ using namespace std;
 int main() {
 //set up variables
     double food_price = 5.99;
-    string store_name = "Mikkis Snacks";
+    string store_name = "Mikki's Snacks";
     string snack_name = "Salted Pretzel";
     int snack_amount;
     double reciept_subtotal, reciept_total, reciept_tax;
+  
   //  double reciept_total;
   //  double reciept_tax;
     double tax = 0.08;
@@ -32,12 +33,19 @@ reciept_tax = tax * reciept_subtotal;
 //this is subtotal plus the tax amount 
 reciept_total = reciept_subtotal + reciept_tax;
 //print reciept and say goodbye
+//print set precison for deciamals
+cout << setprecision(2) << fixed;
 cout << "Your total is $" << reciept_total << ", here is your printed reciept." << endl;
 cout << endl;
-
+cout << "   Your Reciept    " << endl;
+cout << "---------------------" << endl;
+cout << "Subtotal = $" << reciept_subtotal << endl;
+cout << "Tax =       $" << reciept_tax << endl;
+cout << "---------------------" << endl;
+cout << "Total =    $" << reciept_total << endl;
 cout << endl;
-cout << "Have a great day!" << endl;
-
+cout << "Thank you, have a great day!" << endl;
+cout << endl;
 
 return 0;
 }
