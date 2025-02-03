@@ -3,6 +3,8 @@
 // Mikayla Blakey
 // 2/3/25
 
+//This program will show us how to use set precision, and doubles. 
+//We are going to print a reciept for the user based on the amount of their desired snack they'd like, and do calculations of total, subtotal, and tax.
 #include  <iostream>
 #include <iomanip> //need for 2 decimals
 using namespace std;
@@ -25,7 +27,6 @@ int main() {
     cout << "How many " << snack_name << "s would you like?" << endl;
     cin  >> snack_amount;
     cout <<  endl;
-
 //figure out subtotal for reciept
 reciept_subtotal = food_price * snack_amount;
 //calculate tax with equation and subtotal
