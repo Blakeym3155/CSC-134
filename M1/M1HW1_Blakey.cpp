@@ -15,7 +15,9 @@ double gross_movie_sales = 970.8 ;
 
 cout<< "The movie I chose is called " << movie_name << "!" << endl;
 cout << "The company that produced this movie is Universal Pictures" << endl;
-cout << "The gross movies sales were " << movie_name << "million dollars." << endl;
+cout << "This movie released in the year "<< release_year << "." << endl;
+cout << "With the gross movies sales being " << gross_movie_sales << " million dollars." << endl;
+
 cout << endl;
 cout << endl;
 
