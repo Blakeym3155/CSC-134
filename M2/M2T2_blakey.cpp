@@ -33,7 +33,7 @@ reciept_tax = tax * reciept_subtotal;
 //this is subtotal plus the tax amount 
 reciept_total = reciept_subtotal + reciept_tax;
 //print reciept and say goodbye
-//print set precison for deciamals
+//print set precison for decimals
 cout << setprecision(2) << fixed;
 cout << "Your total is $" << reciept_total << ", here is your printed reciept." << endl;
 cout << endl;
