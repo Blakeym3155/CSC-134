@@ -42,16 +42,18 @@ profit = charge - cost;
 
 //print out the calculations below4
 //display the volume to user
-cout << "You're box has the volume of " << volume << " square feet." << endl;
+cout << "You're box has the total volume of " << volume << " square feet." << endl;
 //display the charge per square foot to user
 //I want the decimal points to look right
- cout << setprecision(2) << fixed; 
-cout << "You are charged $" << charge << " per square foot." << endl;
+ cout << setprecision(2) << fixed;
 //display cost of the box to user
-cout << "Making the cost of the box $" << cost << "." << endl;
+cout << "That will cost you $" << cost << " per box." << endl;
+ //display the charge per square foot to user 
+cout << "You can charge the customer $" << charge << " per square foot." << endl;
 //display profits of box.
-cout << "So your final profits would be $" << profit << "."<< endl;
-
+cout << "Making your final profits $" << profit << "."<< endl;
+cout << endl;
+cout << endl;
 
 return 0;
 }
