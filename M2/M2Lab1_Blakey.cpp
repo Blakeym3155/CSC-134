@@ -24,12 +24,15 @@ const double cost_per_cubic_foot = .23;
 const double charge_per_cubic_foot = .5;
 
 //ask user to input length00
-cout << "Hello, what is the length of your box in feet?" << endl;
-cin >> length;
-cout << "What is the width of your box in feet?" << endl;
-cin >> width;
-cout << "Lastly, what is the height of your box in feet?" << endl;
+cout << "Hello, what is the length of your box in feet?: " ;
+cin >> length; 
+cout << endl;
+cout << "What is the width of your box in feet?: ";
+cin >> width; 
+cout << endl;
+cout << "Lastly, what is the height of your box in feet?: " ;
 cin >> height;
+cout << endl;
 
 //equation for volume
 volume = length*width*height;
@@ -40,15 +43,16 @@ charge = volume * charge_per_cubic_foot;
 //calculate profit
 profit = charge - cost;
 
-//print out the calculations below4
+//print out the calculations below
+
 //display the volume to user
 cout << "You're box has the total volume of " << volume << " square feet." << endl;
 //display the charge per square foot to user
 //I want the decimal points to look right
  cout << setprecision(2) << fixed;
-//display cost of the box to user
+//display cost of the box
 cout << "That will cost you $" << cost << " per box." << endl;
- //display the charge per square foot to user 
+//display the charge for the customer 
 cout << "You can charge the customer $" << charge << " per square foot." << endl;
 //display profits of box.
 cout << "Making your final profits $" << profit << "."<< endl;
