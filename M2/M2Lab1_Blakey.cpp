@@ -1,5 +1,5 @@
 // CSC 134
-// M2Lab1
+// M2Lab1- making a program to calulate box, prices for the box, and more.
 // Mikayla Blakey
 // 2/9/25
 
