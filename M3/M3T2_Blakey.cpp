@@ -1,9 +1,9 @@
 // CSC 134
-// M3T1
+// M3T2
 // Mikayla Blakey
 // 2/17/25
 
-//ask user to submit length and width of rectangles, and display area
+//ask user to submit length and width of rectangle, and display area and find larger rectangle
 #include  <iostream>
 using namespace std; 
 
@@ -20,7 +20,7 @@ int main() {
      cin >> Rec1_width ;
      cout << endl ;
 
-     cout << "-----------------------------------------------" << endl;
+     cout << "----------------------------------------------------" << endl;
      //ask user for rectangle 2 length input
      cout << "Input the length of your second rectangle in inches here: " ;
      cin >> Rec2_length ;
@@ -38,5 +38,21 @@ int main() {
     cout << "Your calculated area for your second rectangle is " << Rec2_area << " squared inches";
     cout << endl;
     cout << endl;
+    cout << "----------------------------------------------------" << endl;
+
+    //find larger rectangle
+    if (Rec1_area > Rec2_area){
+        cout << "Your first rectangle is larger then your second rectangle!" << endl;
+        cout << endl;
+    }
+    else if (Rec2_area > Rec1_area) {
+        cout << "Your second rectangle is larger then your second rectangle!"<< endl;
+        cout << endl;
+    }
+    else {
+        cout << "Both of your triangles are the same size!"<< endl;
+        cout << endl;
+    }
+
     return 0;
     }
