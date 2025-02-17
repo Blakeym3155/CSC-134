@@ -10,22 +10,32 @@ using namespace std;
 int main() {
 
     //add variables
-    double length;
-    double width;
-    double height;
-    double area;
-    //ask user for length input
-    cout << "Input the length of your box in inches here: " ;
-    cin >> length ;
+    double Rec1_length, Rec2_length, Rec1_width, Rec2_width, Rec1_area, Rec2_area;
+    //ask user for rectangle 1 length input
+    cout << "Input the length of your first rectangle in inches here: " ;
+    cin >> Rec1_length ;
     cout << endl ;
-    //ask user for width input
-    cout << "Input the width of your box in inches here: " ;
-    cin >> width ;
+     //ask user for rectangle 1 width input
+     cout << "Input the width of your first rectangle in inches here: " ;
+     cin >> Rec1_width ;
+     cout << endl ;
+
+     cout << "-----------------------------------------------" << endl;
+     //ask user for rectangle 2 length input
+     cout << "Input the length of your second rectangle in inches here: " ;
+     cin >> Rec2_length ;
+     cout << endl ;
+    //ask user for rectangle 2 width input
+    cout << "Input the width of your second rectangle in inches here: " ;
+    cin >> Rec2_width ;
     cout << endl ;
     //calculate area
-    area = length * width;
+    Rec1_area = Rec1_length * Rec1_width;
+    Rec2_area = Rec2_length * Rec2_width;
     //display area
-    cout << "Your calculated area is " << area << " squared inches";
+    cout << "Your calculated area for your first rectangle is " << Rec1_area << " squared inches";
+    cout << endl;
+    cout << "Your calculated area for your second rectangle is " << Rec2_area << " squared inches";
     cout << endl;
     cout << endl;
     return 0;
