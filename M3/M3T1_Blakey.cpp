@@ -18,15 +18,15 @@ int main() {
     cout << "Input the length of your box in inches here: " ;
     cin >> length ;
     cout << endl ;
+    //ask user for width input
     cout << "Input the width of your box in inches here: " ;
     cin >> width ;
     cout << endl ;
-    cout << "Your calculated area is " << area << " squared inches"
-
-
-    //ask user for width input
-
     //calculate area
     area = length * width;
+    //display area
+    cout << "Your calculated area is " << area << " squared inches";
+    cout << endl;
+    cout << endl;
     return 0;
     }
