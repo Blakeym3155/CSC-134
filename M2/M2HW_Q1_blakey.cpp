@@ -51,7 +51,7 @@ else{
 
 cout << setprecision(2) << fixed;  
 cout << "Account number "<< account_number <<  " has a new balance of $" << new_balance << endl;
-cout << "Thank you come again next time!";
+cout << "Thank you " << user_name << " come again next time!";
 cout << endl;
 cout << endl;
 return 0;
