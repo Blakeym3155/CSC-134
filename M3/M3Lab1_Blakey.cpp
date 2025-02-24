@@ -47,6 +47,8 @@ int main(){
   // finish up
   cout << endl;
   cout << "Continue onwards with your journey, thanks for playing!" << endl; // this runs no matter what they choose
+  cout << endl;
+  cout << endl;
   return 0; // exit without error
 }
 //outside of main and these are to make my code look cleaner
@@ -59,7 +61,7 @@ void chooseOption1(){
 void chooseOption2(){
     cout << "You chose option 2..." << endl;
     cout << "You hesistate, but as you walk up to the chest it slowly and eerily opens..." << endl;
-    cout << "Upon your arrival to the chest you jump with joy, there are "
+    cout << "Upon your arrival to the chest you jump with joy, there is an abundance of gold, jewels, and gems!"<< endl;
   }
 
 void chooseOption3(){
