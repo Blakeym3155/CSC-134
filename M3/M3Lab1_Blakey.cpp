@@ -30,23 +30,21 @@ int main(){
   cin >> choice;
 
   // using if, make a decision based on the user's choice
-
-  if (1 == choice) {
-  	cout << "You chose option 1.." << endl;
-    cout << "You open the chest, and it won't budge." << endl;
-
+while True:
+    if (1 == choice) {
+  	    chooseOption1();
+        break
   }
-  else if (2 == choice) {
-  	cout << "You chose option 2..." << endl;
-    cout << "You hesistate "
+    else if (2 == choice) {
+  	    chooseOption2();
+        break
   }
-  else if (3 == choice) {
-    cout << "You chose option 3...";
-    cout << ""
-
+    else if (3 == choice) {
+        chooseOption3();
+        break
   }
-  else {
-  	cout << "I'm sorry, that is not a valid choice!" << endl;
+    else {
+  	    cout << "I'm sorry, that is not a valid choice. Try Again!" << endl;
   }
 
   // finish up
@@ -56,13 +54,20 @@ int main(){
 
     return 0;
 }
-
+//outside of main and these are to make my code look cleaner
 void chooseOption1(){
- 
+    cout << "You chose option 1.." << endl;
+    cout << "You open the chest, and it won't budge." << endl;
+    cout << "You then grab a nearby stick, and repeatedly hit the chest."<< endl;
+    cout << "The chest then opens up with a glorious display of...bread loafs"<< endl;
 }
 void chooseOption2(){
-
+    cout << "You chose option 2..." << endl;
+    cout << "You hesistate"
+  }
 }
 void chooseOption3(){
-    
+    cout << "You chose option 3...";
+    cout << ""
+
 }
