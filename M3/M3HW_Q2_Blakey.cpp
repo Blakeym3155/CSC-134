@@ -1,8 +1,8 @@
 // CSC 134
-// M3Lab1
+// M3HW
 // Mikayla Blakey
-// 2/24/25
-// replicate a game similar to deal or no deal
+// 3/5/25
+// 
 
 #include <iostream>
 using namespace std;
