@@ -1,8 +1,8 @@
 // CSC 134
 // M3HW- Q2
 // Mikayla Blakey
-// 3/10/25
-//I will be adding a tip and tae out/ dine in option to my receipt calculator
+// 3/5/25
+//I will be adding a tip and take out/ dine in option to my receipt calculator
 
 #include <iostream>
 #include <iomanip>
