@@ -17,5 +17,21 @@ int main() {
         //count++; is the same as count = count + 1; also count += 1; is the same
     }
     cout << "Done!" << endl;
-    return 0;
+    cout << endl;
+
+    //part 2 we'll make the table of squares
+/*
+    const int MIN_NUM = 1 ;
+    const int MAX_NUM = 10;
+    cout << "Table of Squares" << endl;
+    cout << "-----------------" << endl;
+    int num = MIN_NUM;
+    int sq; //num squared
+    while (num <= MAX_NUM) {
+        sq= num*num;
+        cout << num << "\t" << sq << endl;
+        num++;
+    }
+        */
+        return 0;
     }
