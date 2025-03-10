@@ -14,7 +14,7 @@ int main() {
     while(count <= 5) {
         cout << "Hello: " << count << endl;
         count++;
-        //count++; is the same as count = count + 1;
+        //count++; is the same as count = count + 1; also count += 1; is the same
     }
     cout << "Done!" << endl;
     return 0;
