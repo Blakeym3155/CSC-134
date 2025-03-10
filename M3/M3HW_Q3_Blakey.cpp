@@ -60,14 +60,16 @@ void chooseOption1(){
     cout << "Or" << endl;
     cout << "Do you chose option 2: Carry onward, and forget about the chest" << endl;
     cin >> user_chest_choice;
+    cout << endl;
     if (user_chest_choice == 1) {
         cout << "You hit the chest with the stick, and it opens with a burst of light!" << endl;
         cout << "Inside, you find a map leading to a hidden treasure. You follow the map and find the treasure. Congratulations!" << endl;
-    } else if (user_chest_choice == 2) {
+    } 
+    else if (user_chest_choice == 2) {
         cout << "You decided to leave the chest and continue your journey." << endl;
         cout << "As you walk away, you fall into a hidden pit and get trapped. GAME OVER!" << endl;
-        
-    } else {
+    } 
+    else {
         cout << "I'm sorry, that is not a valid choice. Try Again!" << endl;
         chooseOption1(); // Let the user retry
     }
