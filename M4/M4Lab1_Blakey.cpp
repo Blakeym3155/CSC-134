@@ -14,6 +14,9 @@ int main() {
     string pixel_1 = "😃"; // use any eomoji to test this
     string pixel_2 = "😍";
     string pixel_3 = "🤑";
+    const int SIZE = 7;
+    int WIDTH;
+    int HEIGHT;
     cout << pixel_1 << endl;
     cout << endl;
 
@@ -33,15 +36,40 @@ int main() {
         count ++;
     } while (count < 5);
     cout << endl;
-
+   //user input here 
+   cout << "Please enter the desired height for the box here(Make sure its a whole number): ";
+   cin >> HEIGHT;
+   cout << endl;
+   cout << " Please endtere the desired width for the box here (Make sure its a whole number): ";
+   cin >> WIDTH;
+   cout << endl;
     //try to do a for loop
     //this is the one time using 'i' as a variable name is OK
     //'i' stands for index
-
+    // try to make  box with the emojis
     cout << endl;
-    for(it i=0; i < 10; i++){
+    cout << "Printed Horizontally (row)" << endl;
+    for(int i=0; i < WIDTH; i++){
         cout << pixel_3 << " ";
     }
+    cout << endl;
+    cout << "Printed Vertically (column)" << endl;
+    for(int i=0; i < HEIGHT; i++){
+        cout << pixel_3 << endl;
+    }
+    cout << endl;
+    cout << "printing a box " << HEIGHT << " by " << WIDTH << endl;
+    cout << endl;
+ 
 
+    //This is a nested loop
+    for (int h=0; h< HEIGHT; h++){
+        //print current row
+        for (int w=0; w< WIDTH; w++){
+            cout << pixel_3 << " ";
+        }
+        //go to next line
+        cout << endl;
+    }
         return 0;
     }
