@@ -2,7 +2,7 @@
 // M4Lab1
 // Mikayla Blakey
 // 3/17/25
-
+// we will be trying differnt types of loops. We did nested, while, do while, and for.
 
 #include  <iostream>
 using namespace std; 
@@ -17,6 +17,7 @@ int main() {
     const int SIZE = 7;
     int WIDTH;
     int HEIGHT;
+    //print single emoji
     cout << pixel_1 << endl;
     cout << endl;
 
@@ -37,7 +38,7 @@ int main() {
     } while (count < 5);
     cout << endl;
    //user input here 
-   cout << "Please enter the desired height for the box here(Make sure its a whole number): ";
+   cout << "Please enter the desired height for the box here (Make sure its a whole number): ";
    cin >> HEIGHT;
    cout << endl;
    cout << " Please endtere the desired width for the box here (Make sure its a whole number): ";
@@ -62,7 +63,7 @@ int main() {
     cout << endl;
  
 
-    //This is a nested loop
+    //This is a nested loop that prints based upon user input
     for (int h=0; h< HEIGHT; h++){
         //print current row
         for (int w=0; w< WIDTH; w++){
