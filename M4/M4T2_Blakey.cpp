@@ -2,7 +2,7 @@
 // M4T2
 // Mikayla Blakey
 // 3//25
-
+//copy and pasted from assignment since i was instructed to, we will dicuss in class
 /*******************************************************************************************
 *
 *   raylib [core] example - Basic window
