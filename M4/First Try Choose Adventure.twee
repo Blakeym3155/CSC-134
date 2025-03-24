@@ -1,0 +1,137 @@
+:: StoryTitle
+First Try Choose Adventure
+
+
+:: StoryData
+{
+  "ifid": "064DCDF5-0F66-4937-89FE-6CF389DA7FF4",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "Start of Adventure",
+  "zoom": 1
+}
+
+
+:: Bite lock {"position":"725,150","size":"100,100"}
+
+The lock breaks open and tastes disgusting, but hey the gate is open now!
+
+Continue onwards
+[[Walk Through Graveyard]]
+
+
+
+
+:: Break Down {"position":"275,400","size":"100,100"}
+Your bat is surprisingly tough and manages to break through the gate! Great job.
+
+Continue onwards
+[[Walk Through Graveyard]] 
+
+
+:: Choose Character {"position":"750,600","size":"100,100"}
+
+[[Wizard]]
+[[Ogre]]
+[[Werewolf]]
+
+
+
+:: Climb fence {"position":"525,425","size":"100,100"}
+
+You try to climb the fence and unfortunately find out its electrified.
+
+OH NO! Game Over!
+
+Return to title screen below
+[[Start of Adventure]] 
+
+
+:: Create key {"position":"75,225","size":"100,100"}
+
+You didnt think it through and the lock doesn't fit. That was you one chance and you blew it.
+
+OH NO! Game Over!
+
+Return to title screen below
+[[Start of Adventure]] 
+
+
+:: Enter the Graveyard {"position":"450,25","size":"100,100"}
+
+Now you need to open the door, how will you do it?
+(if:$class is "Werewolf")
+[1. Climb the fence [[Climb fence]]
+  2. Bite the lock open [[Bite lock]]
+  ]
+(else-if:$class is "Wizard")
+[1. Create a key for the gate [[Create key]]
+  2. Fly over the gate [[Fly over gate]]
+  ]
+ (else-if:$class is "Ogre")
+[1. Break down gate with bat [[Break Down]]
+  2. Climb the fence [[Climb fence]]
+  ]
+
+
+:: Fly over gate {"position":"50,25","size":"100,100"}
+Although the gate is electrified, you float ove it safely without a care in the world. 
+
+Continue onwards
+[[Walk Through Graveyard]] 
+
+
+:: Ogre {"position":"625,725","size":"100,100"}
+(set: $class to "Ogre")
+
+You must have a lot of layers.
+
+[[Play]]
+
+
+:: Play {"position":"925,50","size":"100,100"}
+You are at the enterance of an eery graveyard, what do you do?
+[[Enter the Graveyard]]
+[[Run away]]
+
+
+
+:: Run away {"position":"1150,225","size":"100,100"}
+(if:$class is "Werewolf")
+[Who would've thought you would run away.]
+(else-if: $class is "Wizard")
+[Might as well turn yourself into a chicken now.]
+(else-if: $class is "Ogre")
+[One of your layers must be fear.]
+Want to play again?
+
+[[Start of Adventure]]
+
+
+:: Start of Adventure {"position":"900,325","size":"100,100"}
+Welome to this adventure!
+
+[[Choose Character]]
+
+
+
+:: Walk Through Graveyard {"position":"725,275","size":"100,100"}
+You explore the graveyard and befriend a zombie, you have a great night out and meet up with him again for dinner sometime!
+
+Congrats for winning in your own way!
+
+
+:: Werewolf {"position":"900,725","size":"100,100"}
+(set: $class to "Werewolf")
+
+You're quite hairy just an FYI.
+
+[[Play]]
+
+
+:: Wizard {"position":"750,725","size":"100,100"}
+(set: $class to "Wizard")
+
+A bit of magic can only get you out of so much.
+
+[[Play]]
