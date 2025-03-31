@@ -38,20 +38,23 @@ int main() {
   // load up the main menu
   main_menu();
   // when we return here, we're done
+  
   cout << "Thanks for playing!" << endl;
   return 0; // finished with no errors
 }
 
 void main_menu() {
   // Write a simple menu that lets the user choose 1,2, or 3, or 4 to quit.
-  cout << "Main Menu" << endl;
-  cout << "You've woken up in a unrecognizable mysterious place. After close observation you find a sign that says 'Eryndral' That must be the name of this place right?" << endl;
-  cout << "The town isn't very lively aside from this building up ahead that is. The building is a worn down brick color with some sqeaky saloon doors.";
+  cout << "-------------------------------------------------" << endl;
+  cout << "✨ Main Menu ✨" << endl;
+  cout << "You've woken up in a unrecognizable mysterious place. After close observation you find a sign that says 'Somnia' That must be the name of this place right?" << endl;
+  cout << "The town isn't very lively aside from this building up ahead that is. The building is a worn down brick color with some sqeaky saloon doors." << endl;
   cout << "Do you:" << endl;
   cout << "1. Walk right in." << endl;
   cout << "2. Bypass the bar and continue to another place." << endl;
-  cout << "3. Sit out side and ponder." << endl;
+  cout << "3. Sit outside and ponder." << endl;
   cout << "4. [Quit]" << endl;
+  cout << "-------------------------------------------------" << endl;
   cout << "Choose: ";
   int choice;
   cin >> choice;
@@ -69,6 +72,7 @@ void main_menu() {
     cin.ignore(); // clear the user input
     main_menu();  // try again
   }
+  cout << "-------------------------------------------------" << endl;
 }
 
 // FUNCTION DEFINITIONS
@@ -76,11 +80,14 @@ void main_menu() {
 // now we have to actually write the functions.
 // They go here, after main().
 void choice_walk_in() {
+  cout << "-------------------------------------------------" << endl;
   cout << "You stick out like a sore thumb, all eyes are lached onto you." << endl;
   cout << "You want a better idea of where you are, and why you're there..." << endl;
+  cout << "-------------------------------------------------" << endl;
   cout << "Do you:" << endl;
   cout << "1. Approach the bar for a drink in hopes of getting information on the town?" << endl;
   cout << "2. Leave the way you came" << endl;
+  cout << "-------------------------------------------------" << endl;
   int choice;
   cout << "Choose: ";
   cin >> choice;
@@ -91,10 +98,13 @@ void choice_walk_in() {
   }
 }
 void choice_sit_outside() {
-    cout << "You sit outside the bar and grow tired, you get comfortable and rest you back and head along the wall, slowly falling into sleep." << endl;
+  cout << endl;
+    cout << "-------------------------------------------------" << endl;
+    cout << "You sit outside the bar and grow tired, you get comfortable and rest your back and head along the wall, slowly falling into sleep." << endl;
     cout << "You wake up in your bed again, in your home that you had missed whilst being in that weird world." << endl;
-    cout << "Was that just a dream? Who knows, at least youre back." << endl;
-    cout << "Want to play again? Here you go:" << endl;
+    cout << "Was that just a dream? Who knows, at least you're back." << endl;
+    cout << "-------------------------------------------------" << endl;
+    cout << "⬇️  Want to play again? Here you go ⬇️" << endl;
     main_menu();  // try again
     
   }
@@ -103,31 +113,41 @@ void choice_sit_outside() {
 
 void choice_bypass_bar() 
 {
+  cout << endl;
+     cout << "-------------------------------------------------" << endl;
      cout << "You continue onwards and stumble across a patch of grass. You think nothin of it and walk forwards." << endl;
      cout << "Turns out it was a trap, probably by local bandits...You have been inpaled by multiple spike and unfortunatly died." << endl;
      cout << "Game Over!" << endl;
+     cout << "-------------------------------------------------" << endl;
      cout << "Want to play again? Here you go:" << endl;
      main_menu();  // try again
 
     }
 
 void choice_leave_bar() {
+  cout << endl;
+    cout << "-------------------------------------------------" << endl;
     cout << "Great going, when you walk in and turn around it makes you look suspicious so the people in the bar follow you." << endl;
     cout << "They then begin beating you mercilously into a pulp. Unfortunatly you die from the injuries." << endl;
     cout << "Game Over! " << endl;
-    cout << "Want to play again? Here you go:" << endl;
+    cout << "-------------------------------------------------" << endl;
+    cout << "⬇️  Want to play again? Here you go ⬇️" << endl;
     main_menu();  // try again
 }
 
 
 void choice_approach_bar()
 {
+  cout << endl;
+  cout << "-------------------------------------------------" << endl;
   cout << "You find the seat furthest away from all the eyes, and hae no idea what drink to get so you ask for the most popular." << endl;
   cout << "When the bartender brings your drink back you ask him more about the town. He seems stunned but responds and let's you know its the land of your dreams." << endl;
   cout << "Apparently you just have to fall back asleep to return to the main world." << endl;
+  cout << "-------------------------------------------------" << endl;
   cout << "Do you:" << endl;
   cout << "1. Try to sleep on the bar counter, and trust the bartender?" << endl;
   cout << "2. Leave the bar?" << endl;
+  cout << "-------------------------------------------------" << endl;
   int choice;
   cout << "Choose: ";
   cin >> choice;
@@ -140,11 +160,15 @@ void choice_approach_bar()
 
   void choice_sleep() 
   { 
+    cout << endl;
+    cout << "-------------------------------------------------" << endl;
     cout << "You rest you eyes to see if it truly works and guess what..." << endl;
     cout << "When you open them you realized it truly was a dream, and now you only wish to go back and experience that weird land." << endl;
     cout << "At least you're safe now though right?" << endl;
     cout << "Game Over!" << endl;
-    cout << "If you want to play again here you go!:" << endl;
+    cout << "-------------------------------------------------" << endl;
+    cout << "⬇️  Want to play again? Here you go ⬇️" << endl;
+    cout << "-------------------------------------------------" << endl;
     main_menu();  // try again
 }
  
