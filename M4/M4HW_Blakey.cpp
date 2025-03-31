@@ -38,7 +38,7 @@ int main() {
     //gold level adding input validation
     do {
         cout << "Enter a number from 1 to 12: ";
-        cin << number;
+        cin >> number;
         if ( number < 1 || number > 12){
             cout << "This input is invalid. Please enter a number BETWEEN 1 and 12.";
         }
@@ -50,5 +50,6 @@ int main() {
         cout << number << " times " << i << " is " << number * i << "." << endl;
         i++;
     }
+    cout << endl;
     return 0;
 }
