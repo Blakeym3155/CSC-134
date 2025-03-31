@@ -9,5 +9,15 @@ using namespace std;
 
 int main() {
 
+    int number =5;
+    int i = 1;
+
+    // Bronze Level print 5x table
+    cout << "5 Times Table:" << endl;
+    while (i <= 12) {
+        cout << number << " times " << i << "is" << number * i << "." << endl;
+        i++;
+    
+    }
 
 }
