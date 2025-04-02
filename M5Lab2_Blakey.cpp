@@ -10,10 +10,14 @@ using namespace std;
 // the getLength,
 // getWidth, getArea, and displayData
 // functions here.
-
+double getLength();
+double getWidth();
+double getArea(double length, double width);
+void displayData(double length, double width, double area);
 
 int main()
-double length, width, area;
+
+
 {
 	// This program calculates the area of a rectangle.
 	// TODO: fix any syntax errors
@@ -26,16 +30,37 @@ double length, width, area;
    length = getLength();
    
    // Get the rectangle's width.
-   width = getWidth()
+   width = getWidth();
    
    // Get the rectangle's area.
-   are = getArea();
+   area = getArea(length, width);
    
    // Display the rectangle's data.
    displayData(length, width, area);
           
    return 0;
 }
+double getLength(){
+    cout << "Input length value here: " << endl;
+    double length;
+    cin >> length;
+    return length;
+}
+double getArea(double length, double width){
+    double area = width * length;
+    return area;
+}
+double getWidth(){
+    cout << "Input width value here: " << endl;
+    double width;
+    cin >> width;
+    return width;
+}
+void displayData(double length, double width, double area){
+    cout << "Your rectangles width is " << width << ". Your rectangles length is " << length << ". Making your rectangles final area " << area << "." << endl;
+    cout << endl;
+}
+
 
 //***************************************************
 // TODO: write the getLength, getWidth, getArea,    *
