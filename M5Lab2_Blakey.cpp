@@ -1,5 +1,5 @@
 // CSC 134
-// M5T1 
+// M5T1 - finding the area of a rectangle 
 // Mikayla Blakey
 // 4/2/25
 
