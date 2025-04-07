@@ -3,7 +3,7 @@
 // Mikayla Blakey
 // 4/7/25
 
-int main(){
+int main() {
     //first version will have no array
     const int DAYS = 5;
     int cars_today;
@@ -16,4 +16,5 @@ int main(){
         cin >> cars_today;
         cars_total += cars_today;
     }
-}
+    cout << "Over " << DAYS << " days, total cars = " << cars_total << endl;
+} 
