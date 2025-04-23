@@ -32,7 +32,7 @@ enum Room {
 int main() {
     // Room names array
     string roomNames[NUM_ROOMS] = {
-        "Front Desk",
+        "Front Office",
         "Boss's Office",
         "Office Workspace",
         "Copy Room",
@@ -42,11 +42,12 @@ int main() {
     
     // Room descriptions array
     string roomDescriptions[NUM_ROOMS] = {
-        "A grand entrance hall with a dusty chandelier hanging above.",
-        "Walls lined with ancient books. The air smells of old paper.",
-        "A spacious kitchen with an old stove and wooden counter.",
-        "An overgrown garden with stone pathways and a small fountain.",
-        "A dark, damp basement with cobwebs in the corners."
+        "You're greeted by Jessica in the bright and tidy front office, featuring a desk and comfy chairs.",
+        "A sleek room with a large desk, leather chair, and shelves full of books, lit by a city-view window.",
+        "A neat space with rows of desks, modern computers, and motivational posters.",
+        "A compact room with printers, shelves of supplies, and the hum of machines.",
+        "A cozy area with sofas, a coffee station, and a bulletin board for announcements.",
+        "A clean and modern restroom with tiles so pristine you'd think it's the boss's personal spa."
     };
     
     // Adjacency list using a 2D array
@@ -61,38 +62,45 @@ int main() {
     }
     
     // Define the connections between rooms using the Room enum
-    // Entrance Hall connections
-    connections[ENTRANCE_HALL][NORTH] = LIBRARY;    // Entrance Hall -> North -> Library
-    connections[ENTRANCE_HALL][EAST] = KITCHEN;     // Entrance Hall -> East -> Kitchen
-    connections[ENTRANCE_HALL][SOUTH] = -1;         // No connection south
-    connections[ENTRANCE_HALL][WEST] = GARDEN;      // Entrance Hall -> West -> Garden
+    // Front Desk connections
+    connections[FRONT_DESK][NORTH] = BOSS_OFFICE;    // Front Desk -> North -> Boss's Office
+    connections[FRONT_DESK][EAST] = OFFICE_WORKSPACE;     // Front Desk -> East -> Kitchen
+    connections[FRONT_DESK][SOUTH] = -1;         // No connection south
+    connections[FRONT_DESK][WEST] = COPY_ROOM;      // Front Desk -> West -> Copy Room
     
-    // Library connections
-    connections[LIBRARY][NORTH] = -1;               // No connection north
-    connections[LIBRARY][EAST] = -1;                // No connection east
-    connections[LIBRARY][SOUTH] = ENTRANCE_HALL;    // Library -> South -> Entrance Hall
-    connections[LIBRARY][WEST] = -1;                // No connection west
+    // Boss's Office connections
+    connections[BOSS_OFFICE][NORTH] = -1;               // No connection north
+    connections[BOSS_OFFICE][EAST] = PRIVATE_BATHROOM;                // Boss Office -> East -> Private Bathroom
+    connections[BOSS_OFFICE][SOUTH] = FRONT_DESK;    // Boss Office -> South -> Front Desk
+    connections[BOSS_OFFICE][WEST] = -1;                // No connection west
     
-    // Kitchen connections
-    connections[KITCHEN][NORTH] = -1;               // No connection north
-    connections[KITCHEN][EAST] = -1;                // No connection east
-    connections[KITCHEN][SOUTH] = BASEMENT;         // Kitchen -> South -> Basement
-    connections[KITCHEN][WEST] = ENTRANCE_HALL;     // Kitchen -> West -> Entrance Hall
+    // Office Workspace connections
+    connections[OFFICE_WORKSPACE][NORTH] = -1;               // No connection north
+    connections[OFFICE_WORKSPACE][EAST] = -1;                // No connection east
+    connections[OFFICE_WORKSPACE][SOUTH] = WORKER_LOUNGE;         // Office Workspace -> South -> Worker Lounge
+    connections[OFFICE_WORKSPACE][WEST] = FRONT_DESK;     // Office Workspace -> West -> Front Desk
     
-    // Garden connections
-    connections[GARDEN][NORTH] = -1;                // No connection north
-    connections[GARDEN][EAST] = ENTRANCE_HALL;      // Garden -> East -> Entrance Hall
-    connections[GARDEN][SOUTH] = -1;                // No connection south
-    connections[GARDEN][WEST] = -1;                 // No connection west
+    // Copy Room connections
+    connections[COPY_ROOM][NORTH] = -1;                // No connection north
+    connections[COPY_ROOM][EAST] = FRONT_DESK;      // Copy Room -> East -> Front Desk
+    connections[COPY_ROOM][SOUTH] = -1;                // No connection south
+    connections[COPY_ROOM][WEST] = -1;                 // No connection west
     
-    // Basement connections
-    connections[BASEMENT][NORTH] = KITCHEN;         // Basement -> North -> Kitchen
-    connections[BASEMENT][EAST] = -1;               // No connection east
-    connections[BASEMENT][SOUTH] = -1;              // No connection south
-    connections[BASEMENT][WEST] = -1;               // No connection west
+    // Worker Lounge connections
+    connections[WORKER_LOUNGE][NORTH] = OFFICE_WORKSPACE;         // Worker Lounge -> North -> Office Workspace
+    connections[WORKER_LOUNGE][EAST] = -1;               // No connection east
+    connections[WORKER_LOUNGE][SOUTH] = -1;              // No connection south
+    connections[WORKER_LOUNGE][WEST] = -1;               // No connection west
+
+    // Private Bathroom connections
+    connections[PRIVATE_BATHROOM][NORTH] = -1;         // No connection east
+    connections[PRIVATE_BATHROOM][EAST] = -1;               // No connection east
+    connections[PRIVATE_BATHROOM][SOUTH] = -1;              // No connection south
+    connections[PRIVATE_BATHROOM][WEST] = OFFICE_WORKSPACE;;               // Private Bathroom -> West -> Boss's Office
     
-    // Game state
-    int currentRoom = ENTRANCE_HALL; // Start in the Entrance Hall
+    
+    // Game start
+    int currentRoom = FRONT_DESK; // Start in the Front Desk
     bool gameRunning = true;
     
     // Game loop
