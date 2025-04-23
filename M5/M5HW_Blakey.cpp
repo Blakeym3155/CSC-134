@@ -7,6 +7,8 @@
 using namespace std;
 #include <iomanip> //to help set precision
 
+
+//Question 1 Below
 string getMonth();
 double getRainfall();
 void displayAverage(string m1, string m2, string m3, double r1, double r2, double r3);
