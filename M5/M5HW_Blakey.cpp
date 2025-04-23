@@ -1,49 +1,57 @@
 // CSC 134
-// M5T1 - finding the area of a rectangle 
+// M5HW - answer the six questions
 // Mikayla Blakey
-// 4/2/25
+// 4/23/25
 
 #include <iostream>
 using namespace std;
+#include <iomanip> //to help set precision
 
-// Declare (Write the prototypes for)
-// the getLength,
-// getWidth, getArea, and displayData
-// functions here.
+string getMonth();
 double getRainfall();
-double getMonth();
-void displayRainfall(double rainfall, string month);
+void displayAverage(string m1, string m2, string m3, double r1, double r2, double r3);
 
-int main()
+int main() {
+    string month1, month2, month3;
+    double rain1, rain2, rain3;
 
+    //try to get input
+    month1 = getMonth();
+    rain1 = getRainfall();
 
-{
-	// This program calculates the area of a rectangle.
-	// TODO: fix any syntax errors
-	
-   double rainfall;
-   string month;
+    month2 = getMonth();
+    rain2 = getRainfall();
 
-  month = getMonth();         
-  rainfall = getRainfall();
-    
-   displayRainfall(rainfall, month);
-          
-   return 0;
+    month3 = getMonth();
+    rain3 = getRainfall();
+
+cout << "---------------------------------------------------" << endl;
+displayAverage(month1, month2, month3, rain1, rain2, rain3);
+cout << "---------------------------------------------------" << endl;
+
+    return 0;
 }
-double getRainfall(){
-    cout << "Enter Rainfall: " << endl;
-    double rainfall;
-    cin >> rainfall;
-    return rainfall;
-}
-double getMonth(){
-    cout << "Enter Month: " << endl;
+//function to get the month
+string getMonth(){
     string month;
+    cout << "Enter month: ";
     cin >> month;
     return month;
 }
-void displayRainfall(double length, double width, double area){
-    cout << "Your rectangles width is " << width << ". Your rectangles length is " << length << ". Making your rectangles final area " << area << "." << endl;
-    cout << endl;
+
+//get the rainfall
+
+double getRainfall(){
+    double rainfall;
+    cout << "Enter rainfall for that month (in inches) ";
+    cin >> rainfall;
+    return rainfall;
 }
+//make function to display average and calculate
+void displayAverage(string m1, string m2, string m3, double r1, double r2, double r3){
+   double average = (r1+r2+r3) / 3.0;
+   cout << fixed << setprecision(2);
+   cout << "The average rainfall for " << m1 << ", " << m2 << ", and " << m3 << " is " << average << " inches." << endl; 
+}
+
+
