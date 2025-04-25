@@ -12,6 +12,10 @@ using namespace std;
 string getMonth();
 double getRainfall();
 void displayAverage(string m1, string m2, string m3, double r1, double r2, double r3);
+//question 2 below
+double getDimension(string name);
+double calculateVolume(double width, double length, double height);
+void displayVolume(double volume) ;
 
 int main() {
     string month1, month2, month3;
@@ -30,7 +34,17 @@ int main() {
 cout << "---------------------------------------------------" << endl;
 displayAverage(month1, month2, month3, rain1, rain2, rain3);
 cout << "---------------------------------------------------" << endl;
+cout << endl;
+//question 2 
+double width = getDimension("width");
+double length = getDimension("length");
+double height = getDimension("height");
 
+double volume = calculateVolume(width, length, height);
+cout << "---------------------------------------------------" << endl;
+displayVolume(volume);
+cout << "---------------------------------------------------" << endl;
+cout<< endl;
     return 0;
 }
 //function to get the month
@@ -56,4 +70,25 @@ void displayAverage(string m1, string m2, string m3, double r1, double r2, doubl
    cout << "The average rainfall for " << m1 << ", " << m2 << ", and " << m3 << " is " << average << " inches." << endl; 
 }
 
+//question 2
+//setting up dimensions with input given
+double getDimension(string name){
+    double value;
+    do{
+        cout << "Enter the " << name << " of the block: ";
+        cin >> value;
+        if(value <= 0){
+            cout << "Invalid input. " << name << " must be greater than 0." << endl;
+        }
+    }
+    while (value <= 0);
+    return value;
+    }
+//calculates volume
+double calculateVolume(double width, double length, double height){
+    return width * length * height;
+}
+void displayVolume(double volume){
+    cout << "The volume of the block is " << volume << " cubic units." << endl;
 
+}
