@@ -207,7 +207,7 @@ public:
 
 int main(int argc, char* argv[]) {
     // Default values for rows and columns
-    int rows = 10;
+    int rows = 15;
     int cols = 10;
     
     // Parse command line arguments if provided

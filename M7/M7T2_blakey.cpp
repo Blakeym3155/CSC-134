@@ -27,9 +27,17 @@ void Rectangle::setLength(double len)
 {
     length = len;
 }
-double Rectangle::getWidth() const
+double Rectangle::getArea() const
 {
 return width * length;
+}
+double Rectangle::getWidth() const
+{
+return width ;
+}
+double Rectangle::getLength() const
+{
+return length;
 }
 
 int main()
@@ -53,8 +61,8 @@ int main()
     //display final rectangle data below
     cout <<"--------------------------------------------------" << endl;
     cout << "Here is the rectangle's date: "<< endl;
-    cout << "Width: " << box.getWidth()<< endl;
-    cout << "Length: " << box.getLength()<< endl;
+    cout << "Width: " << box.getWidth() << endl;
+    cout << "Length: " << box.getLength() << endl;
     cout << "Area: " << box.getArea() << endl;
     cout << "--------------------------------------------------" << endl;
     return 0;
