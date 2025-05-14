@@ -1,0 +1,672 @@
+:: StoryTitle
+Final Choose Your Own Adventure
+
+
+:: StoryData
+{
+  "ifid": "F2FC1775-8DB6-4FBF-954A-A48702EED825",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "Start of Story",
+  "zoom": 1
+}
+
+
+:: \ Game Over {"position":"1950,975","size":"100,100"}
+[[Return to starting screen|Start of Story]]
+
+
+:: AskMore {"position":"1650,1000","size":"100,100"}
+
+The bartender leans in, eyes narrowing. “You’ve got questions, don’t you?” he says, voice low and gravelly. “Follow me.”
+
+Without another word, he slips through a narrow door behind the bar. You hesitate, then follow.
+
+[[Follow him|TunnelEntrance]]
+
+
+
+:: Bartender {"position":"1737.5,750","size":"100,100"}
+The bartender tells you about the town's history and offers you a drink.
+
+[[Ask about the town & Accept Drink|Town History]]
+[[Decline the drink|Decline Drink]]
+[[Check your inventory|Inventory]]
+
+
+:: Character Selection {"position":"625,475","size":"100,100"}
+Choose your character type:
+
+[[Healer|Healer]]
+[[Warrior|Warrior]]
+[[Scientist|Scientist]]
+
+
+:: Corner Shop {"position":"2000,500","size":"100,100"}
+You enter the run-down corner shop. The shopkeeper looks up from behind the counter. The shop is cluttered with various items.
+
+[[Talk to the shopkeeper|Shopkeeper]]
+[[Look around|Shop Description]]
+[[Explore the town again|Town Exploration]]
+[[Check your inventory|Inventory]]
+
+
+:: Decline Drink {"position":"1775,1075","size":"100,100"}
+<img src="https://i.postimg.cc/rw7YTPtC/beatup-stickfigure.jpg" alt="Beat Up Stick Figure" style="width:400px; display:block; margin:auto; margin-top:20px;" />
+You shake your head and politely decline the drink.
+The bartender’s smile fades. The room falls silent. Every patron in the tavern turns to look at you, their expressions hardening.
+“You don’t trust my hospitality?” the bartender growls.
+
+Before you can respond, a heavy mug crashes into the back of your head. You stumble, dazed, as the crowd closes in.
+Bludgeons, Bottles, Boots, from every direction.
+
+The last thing you hear is the bartender muttering, “Should’ve just taken the drink.”
+
+**You have died.**
+
+[[Game Over!| Game Over]]
+
+
+
+:: Faction Selection {"position":"625,750","size":"100,100"}
+Choose your faction:
+------------------------------------------------------------------------
+[[Join the Restitutores|Restitutores Storyline]]
+-The Restitutores are focused on healing the world and restoring it to its original state. They believe in using ancient technologies and magical abilities to cure the land and its inhabitants.
+------------------------------------------------------------------------
+[[Join the Innovatores|Innovatores Storyline]]
+-The Innovatores aim to reshape the world according to their vision. They believe in using advanced technology and innovative ideas to build a new world order.
+------------------------------------------------------------------------
+
+
+:: Healer {"position":"500,600","size":"100,100"}
+<img src="https://i.postimg.cc/BQbrGyvt/healer.webp" alt="Healer" style="width:400px; display:block; margin:auto; margin-top:20px;" />
+(set: $characterType to "Healer")
+(set: $playerHP to 100)
+(set: $playerDamage to 5)
+(set: $healingPower to 25)
+(set: $protectiveAura to 5)
+(set: $inventory to (array: "Healing Potion", "Healing Potion", "Ancient Relic", "", ""))
+
+You are a Healer, specializing in restoring health and curing ailments. Your journey begins now.
+
+[[Choose your faction|Faction Selection]]
+[[Go back|Character Selection]]
+
+
+:: Innovatores Attack {"position":"800,1625","size":"100,100"}
+(set: $enemyHP to $enemyHP - $playerDamage)
+(set: $playerHP to $playerHP - $enemyDamage)
+You attack the robot, dealing $playerDamage damage. The robot retaliates, dealing $enemyDamage damage to you.
+
+- Rogue Robot HP: (print: $enemyHP)
+- Your HP: (print: $playerHP)
+
+(if: $enemyHP <= 0)[
+  The robot is defeated!
+  [[Continue|Innovatores Victory]]
+]
+(else:)[
+  [[Continue|Innovatores Battle]]
+]
+
+
+:: Innovatores Aura {"position":"675,1750","size":"100,100"}
+(set: $playerHP to $playerHP - ($enemyDamage - $protectiveAura))
+You use your Protective Aura, reducing incoming damage by $protectiveAura for the next 3 turns. The creature attacks, dealing ($enemyDamage - $protectiveAura) damage to you.
+
+- Your HP: (print: $playerHP)
+
+(if: $playerHP <= 0)[
+  You have been defeated.
+  [[Restart|Start of Story]]
+]
+(else:)[
+  [[Continue|Innovatores Battle]]
+]
+
+
+:: Innovatores Battle {"position":"1150,975","size":"100,100"}
+You engage in battle with the Crazy Robots. Choose your action:
+
+(if: $characterType is "Healer")[
+  [[Attack|Innovatores Attack]]
+  [[Heal|Innovatores Heal]]
+  [[Use Protective Aura|Innovatores Aura]]
+]
+(if: $characterType is "Warrior")[
+  [[Simple Attack|Innovatores Attack]]
+  [[Heavy Attack|Innovatores Heavy Attack]]
+  [[Defensive Stance|Innovatores Defense]]
+]
+(if: $characterType is "Scientist")[
+  [[Simple Attack|Innovatores Attack]]
+  [[Hack to Flee|Innovatores Hack]]
+]
+[[Use Item from Inventory|Innovatores Use Item]]
+[[Check Inventory|Inventory]]
+]
+
+
+:: Innovatores Defense {"position":"175,1625","size":"100,100"}
+(set: $playerHP to $playerHP - ($enemyDamage - $defensiveStance))
+You use your Defensive Stance, reducing incoming damage by $defensiveStance for the next 2 turns. The robot attacks, dealing ($enemyDamage - $defensiveStance) damage to you.
+
+- Your HP: (print: $playerHP)
+
+(if: $playerHP <= 0)[
+  You have been defeated.
+  [[Restart|Start of Story]]
+]
+(else:)[
+  [[Continue|Innovatores Battle]]
+]
+
+
+:: Innovatores First Conflict {"position":"1100,800","size":"100,100"}
+A Crazy Robot whirs to life and blocks your way! This one won’t back down—you’ll have to fight unless you’re a Scientist and can hack its systems to slow it down. What’s your move?
+
+(if: $characterType is "Healer")[
+  [[Attack|Innovatores Attack]]
+  [[Heal|Innovatores Heal]]
+  [[Use Item|Innovatores Use Item]]
+  [[Use Protective Aura|Innovatores Aura]]
+]
+(if: $characterType is "Warrior")[
+  [[Simple Attack|Innovatores Attack]]
+  [[Heavy Attack|Innovatores Heavy Attack]]
+  [[Defensive Stance|Innovatores Defense]]
+]
+(if: $characterType is "Scientist")[
+  [[Simple Attack|Innovatores Attack]]
+  [[Tinker|Innovatores Tinker]]
+  [[Hack|Innovatores Hack]]
+]
+[[Check Inventory|Inventory]]
+
+
+:: Innovatores Hack {"position":"425,1625","size":"100,100"}
+You disable the robot's special ability for 2 turns. The robot attacks, dealing $enemyDamage damage to you.
+
+- Your HP: (print: $playerHP)
+
+(if: $playerHP <= 0)[
+  You have been defeated.
+  [[Restart|Start of Story]]
+]
+(else:)[
+  [[Continue|Innovatores Battle]]
+]
+
+
+:: Innovatores Heal {"position":"675,1625","size":"100,100"}
+(set: $playerHP to $playerHP + $healingPower)
+(set: $playerHP to $playerHP - $enemyDamage)
+You cast a healing spell, restoring $healingPower HP. The creature attacks, dealing $enemyDamage damage to you.
+
+- Your HP: (print: $playerHP)
+
+(if: $playerHP <= 0)[
+  You have been defeated.
+  [[Restart|Start of Story]]
+]
+(else:)[
+  [[Continue|Innovatores Battle]]
+]
+
+
+:: Innovatores Heavy Attack {"position":"50,1625","size":"100,100"}
+(if: $heavyAttackCooldown <= 0)[
+  (set: $enemyHP to $enemyHP - $heavyAttack)
+  (set: $playerHP to $playerHP - $enemyDamage)
+  (set: $heavyAttackCooldown to 2)
+  You use your heavy attack, dealing $heavyAttack damage. The robot attacks, dealing $enemyDamage damage to you.
+
+  - Rogue Robot HP: (print: $enemyHP)
+  - Your HP: (print: $playerHP)
+
+  (if: $enemyHP <= 0)[
+    The robot is defeated!
+    [[Continue|Innovatores Victory]]
+  ]
+  (else:)[
+    [[Continue|Innovatores Battle]]
+  ]
+]
+(else:)[
+  Your heavy attack is recharging.
+  [[Continue|Innovatores Battle]]
+]
+
+
+:: Innovatores Storyline {"position":"700,875","size":"100,100"}
+You have joined the Innovatores, aiming to reshape the world according to your vision. Your journey begins in a wasteland, where you must recruit supporters and harness new technologies.
+
+[[Continue|Innovatores First Conflict]]
+[[Check Inventory|Inventory]]
+
+
+:: Innovatores Tinker {"position":"300,1625","size":"100,100"}
+You search for items and combine them into a new gadget. The robot attacks, dealing $enemyDamage damage to you.
+
+- Your HP: (print: $playerHP)
+
+(if: $playerHP <= 0)[
+  You have been defeated.
+  [[Restart|Start of Story]]
+]
+(else:)[
+  [[Continue|Innovatores Battle]]
+]
+
+
+:: Innovatores Use Ancient Relic {"position":"1025,1800","size":"100,100"}
+You use the Ancient Relic, unleashing a powerful magic that deals 30 damage to the Robot.
+
+(set: $enemyHP to $enemyHP - 30)
+
+- Carno Goblin HP: (print: $enemyHP)
+
+(if: $enemyHP <= 0)[
+  The goblin is defeated!
+  [[Continue|Innovatores Victory]]
+]
+(else:)[
+  [[Continue|Innovatores Battle]]
+]
+
+
+:: Innovatores Use Healing Potion {"position":"900,1800","size":"100,100"}
+(set: $playerHP to $playerHP + 20)
+You use a Healing Potion, restoring 20 HP.
+
+- Your HP: (print: $playerHP)
+
+(if: $playerHP <= 0)[
+  You have been defeated.
+  [[Restart|Start of Story]]
+]
+(else:)[
+  [[Continue|Innovatores Battle]]
+]
+
+
+:: Innovatores Use Item {"position":"925,1625","size":"100,100"}
+Choose an item from your inventory to use:
+
+(if: $inventory contains "Healing Potion")[
+  [[Use Healing Potion|Innovatores Use Healing Potion]]
+]
+(if: $inventory contains "Ancient Relic")[
+  [[Use Ancient Relic|Innovatores Use Ancient Relic]]
+]
+[[Check Inventory|Inventory]]
+
+
+:: Innovatores Victory {"position":"1600,600","size":"100,100"}
+You have defeated the Crazy Robot! Now, you can explore the nearby town.
+
+[[Explore the town|Town Exploration]]
+[[Check your inventory|Inventory]]
+
+
+:: Introduction {"position":"625,350","size":"100,100"}
+You find yourself in a world where magic and technology coexist. The Nexus Consortium has discovered a powerful artifact known as the Nucleus Aetherius. During an experiment to merge its magic with technology, a catastrophic explosion occurred, altering the world forever.
+
+[[Continue|Character Selection]]
+
+
+:: Inventory {"position":"625,1025","size":"100,100"}
+(if: $characterType is "Healer")[
+  Healing Potion Available: (print: $inventory contains "Healing Potion")
+  Meat Available: (print: $inventory contains "Meat")
+]
+(if: $characterType is "Warrior")[
+  Sword Available: (print: $inventory contains "Sword")
+  Shield Available: (print: $inventory contains "Shield")
+  Meat Available: (print: $inventory contains "Meat")
+]
+(if: $characterType is "Scientist")[
+  High-tech Gadget Available: (print: $inventory contains "High-tech Gadget")
+  Toolkit Available: (print: $inventory contains "Toolkit")
+  Hammer Available: (print: $inventory contains "Hammer")
+  Meat Available: (print: $inventory contains "Meat")
+]
+Click back arrow to exit!
+
+
+:: Restitutores Attack {"position":"800,1500","size":"100,100"}
+(set: $enemyHP to $enemyHP - $playerDamage)
+(set: $playerHP to $playerHP - $enemyDamage)
+You attack the creature, dealing $playerDamage damage. The creature retaliates, dealing $enemyDamage damage to you.
+
+- Mutated Creature HP: (print: $enemyHP)
+- Your HP: (print: $playerHP)
+
+(if: $enemyHP <= 0)[
+  The creature is defeated!
+  [[Continue|Restitutores Victory]]
+]
+(else:)[
+  [[Continue|Restitutores Battle]]
+]
+
+
+:: Restitutores Aura {"position":"550,1750","size":"100,100"}
+(set: $playerHP to $playerHP - ($enemyDamage - $protectiveAura))
+You use your Protective Aura, reducing incoming damage by $protectiveAura for the next 3 turns. The creature attacks, dealing ($enemyDamage - $protectiveAura) damage to you.
+
+- Your HP: (print: $playerHP)
+
+(if: $playerHP <= 0)[
+  You have been defeated.
+  [[Restart|Start of Story]]
+]
+(else:)[
+  [[Continue|Restitutores Battle]]
+]
+
+
+:: Restitutores Battle {"position":"425,1150","size":"100,100"}
+You engage in battle with the Carno Goblins. Choose your action:
+
+(if: $characterType is "Healer")[
+  [[Attack|Restitutores Attack]]
+  [[Heal|Restitutores Heal]]
+  [[Use Protective Aura|Restitutores Aura]]
+]
+(if: $characterType is "Warrior")[
+  [[Simple Attack|Restitutores Attack]]
+  [[Heavy Attack|Restitutores Heavy Attack]]
+  [[Defensive Stance|Restitutores Defense]]
+]
+(if: $characterType is "Scientist")[
+  [[Simple Attack|Restitutores Attack]]
+  [[Tinker|Restitutores Tinker]]
+]
+[[Use Item from Inventory|Restitutores Use Item]]
+[[Check Inventory|Inventory]]
+]
+
+
+:: Restitutores Defense {"position":"175,1500","size":"100,100"}
+(set: $playerHP to $playerHP - ($enemyDamage - $defensiveStance))
+You use your Defensive Stance, reducing incoming damage by $defensiveStance for the next 2 turns. The robot attacks, dealing ($enemyDamage - $defensiveStance) damage to you.
+
+- Your HP: (print: $playerHP)
+
+(if: $playerHP <= 0)[
+  You have been defeated.
+  [[Restart|Start of Story]]
+]
+(else:)[
+  [[Continue|Restitutores Battle]]
+]
+
+
+:: Restitutores Drop Meat {"position":"550,1500","size":"100,100"}
+You drop some meat from your inventory, warding off the Carno Goblins. They wanted nothing to do with you now, so carry on.
+
+[[Restitutores Victory]]
+
+
+:: Restitutores First Conflict {"position":"175,875","size":"100,100"}
+A Carno Goblin blocks your path! You can toss it some meat to avoid a fight, or draw your weapon and face it head-on. What will you do?
+(if: $characterType is "Healer")[
+  [[Attack|Restitutores Attack]]
+  [[Heal|Restitutores Heal]]
+   [[Use Item|Restitutores Use Item]]
+  [[Use Protective Aura|Restitutores Aura]]
+]
+(if: $characterType is "Warrior")[
+  [[Simple Attack|Restitutores Attack]]
+  [[Heavy Attack|Restitutores Heavy Attack]]
+  [[Defensive Stance|Restitutores Defense]]
+]
+(if: $characterType is "Scientist")[
+  [[Simple Attack|Restitutores Attack]]
+  [[Tinker|Restitutores Tinker]]
+]
+(if: $inventory contains "Meat")[
+  [[Drop Meat|Restitutores Drop Meat]]
+]
+[[Check Inventory|Inventory]]
+
+
+:: Restitutores Hack {"position":"425,1500","size":"100,100"}
+You disable the robot's special ability for 2 turns. The robot attacks, dealing $enemyDamage damage to you.
+
+- Your HP: (print: $playerHP)
+
+(if: $playerHP <= 0)[
+  You have been defeated.
+  [[Restart|Start of Story]]
+]
+(else:)[
+  [[Continue|Restitutores Battle]]
+]
+
+
+:: Restitutores Heal {"position":"675,1500","size":"100,100"}
+(set: $playerHP to $playerHP + $healingPower)
+(set: $playerHP to $playerHP - $enemyDamage)
+You cast a healing spell, restoring $healingPower HP. The creature attacks, dealing $enemyDamage damage to you.
+
+- Your HP: (print: $playerHP)
+
+(if: $playerHP <= 0)[
+  You have been defeated.
+  [[Restart|Start of Story]]
+]
+(else:)[
+  [[Continue|Restitutores Battle]]
+]
+
+
+:: Restitutores Heavy Attack {"position":"50,1500","size":"100,100"}
+(if: $heavyAttackCooldown <= 0)[
+  (set: $enemyHP to $enemyHP - $heavyAttack)
+  (set: $playerHP to $playerHP - $enemyDamage)
+  (set: $heavyAttackCooldown to 2)
+  You use your heavy attack, dealing $heavyAttack damage. The robot attacks, dealing $enemyDamage damage to you.
+
+  - Rogue Robot HP: (print: $enemyHP)
+  - Your HP: (print: $playerHP)
+
+  (if: $enemyHP <= 0)[
+    The robot is defeated!
+    [[Continue|Restitutores Victory]]
+  ]
+  (else:)[
+    [[Continue|Restitutores Battle]]
+  ]
+]
+(else:)[
+  Your heavy attack is recharging.
+  [[Continue|Restitutores Battle]]
+]
+
+
+:: Restitutores Storyline {"position":"550,875","size":"100,100"}
+You have joined the Restitutores, dedicated to restoring the world to its original state. Your journey begins in a wasteland, where you must gather allies and resources to heal the land.
+
+[[Continue|Restitutores First Conflict]]
+[[Check Inventory|Inventory]]
+
+
+:: Restitutores Tinker {"position":"300,1500","size":"100,100"}
+You search for items and combine them into a new gadget. The robot attacks, dealing $enemyDamage damage to you.
+
+- Your HP: (print: $playerHP)
+
+(if: $playerHP <= 0)[
+  You have been defeated.
+  [[Restart|Start of Story]]
+]
+(else:)[
+  [[Continue|Restitutores Battle]]
+]
+
+
+:: Restitutores Use Ancient Relic {"position":"1100,1425","size":"100,100"}
+You use the Ancient Relic, unleashing a powerful magic that deals 30 damage to the goblin.
+
+(set: $enemyHP to $enemyHP - 30)
+
+- Carno Goblin HP: (print: $enemyHP)
+
+(if: $enemyHP <= 0)[
+  The goblin is defeated!
+  [[Continue|Restitutores Victory]]
+]
+(else:)[
+  [[Continue|Restitutores Battle]]
+]
+
+
+:: Restitutores Use Healing Potion {"position":"1100,1550","size":"100,100"}
+(set: $playerHP to $playerHP + 20)
+You use a Healing Potion, restoring 20 HP.
+
+- Your HP: (print: $playerHP)
+
+(if: $playerHP <= 0)[
+  You have been defeated.
+  [[Restart|Start of Story]]
+]
+(else:)[
+  [[Continue|Restitutores Battle]]
+]
+
+
+:: Restitutores Use Item {"position":"925,1500","size":"100,100"}
+Choose an item from your inventory to use:
+
+(if: $inventory contains "Healing Potion")[
+  [[Use Healing Potion|Restitutores Use Healing Potion]]
+]
+(if: $inventory contains "Ancient Relic")[
+  [[Use Ancient Relic|Restitutores Use Ancient Relic]]
+]
+(if: $inventory contains "Meat")[
+  [[Drop Meat|Restitutores Drop Meat]]
+]
+[[Check Inventory|Inventory]]
+
+
+:: Restitutores Victory {"position":"1600,450","size":"100,100"}
+You have defeated the Carno Goblins! Now, you can explore the nearby town.
+
+[[Explore the town|Town Exploration]]
+[[Check your inventory|Inventory]]
+
+
+:: Scientist {"position":"750,600","size":"100,100"}
+
+<img src="https://i.postimg.cc/fRVxwWx1/scientist.jpg" alt="Mysterious Scientist" style="width:400px; display:block; margin:auto; margin-top:20px;" />
+(set: $characterType to "Scientist")
+(set: $playerHP to 130)
+(set: $playerDamage to 15)
+(set: $hack to 2)
+(set: $analyze to 10)
+(set: $inventory to (array: "Meat", "Toolkit", "Hammer", "Meat", ""))
+You are a Scientist, expert in technology and innovation. Your journey begins now.
+
+[[Choose your faction|Faction Selection]]
+[[Go back|Character Selection]]
+
+
+:: Shop Description {"position":"2200,500","size":"100,100"}
+
+<img src="https://i.postimg.cc/T18tMLLd/Bookshelf.jpg" alt="Bookshelf" style="width:400px; display:block; margin:auto; margin-top:20px;" />
+The shop is filled with various items, from canned food to old tools. It's cluttered and disorganized, but you might find something useful.
+
+[[Return to the shop|Corner Shop]]
+[[Check your inventory|Inventory]]
+
+
+:: Shop Items {"position":"2075,800","size":"100,100"}
+The shopkeeper lists the items available for sale: canned food, old tools, and a mysterious artifact. But you are broke..no food for you.
+
+[[Return to the shop|Corner Shop]]
+[[Check your inventory|Inventory]]
+
+
+:: Shopkeeper {"position":"2200,700","size":"100,100"}
+The shopkeeper tells you about the items in the shop and offers to sell you something.
+
+* [[Ask about the items|Shop Items]]
+* [[Decline the offer|Corner Shop]]
+[[Check your inventory|Inventory]]
+
+
+:: Start of Story {"position":"625,225","size":"100,100"}
+(set: $characterType to "")
+(set: $playerHP to 50)
+(set: $enemyHP to 60)
+(set: $playerDamage to 5)
+(set: $enemyDamage to 10)
+(set: $inventory to (array: "", "", "", "", ""))
+Welcome to "The Catalyst's Awakening." In this interactive adventure, you'll explore a world transformed by a powerful artifact. Choose your path and shape the future of this world.
+
+[[Begin your journey|Introduction]]
+
+
+:: Tavern {"position":"1800,625","size":"100,100"}
+<img src="https://i.postimg.cc/L884Zvv1/Bar.jpg" alt="Bar Image" style="width:400px; display:block; margin:auto; margin-top:20px;" />
+You step into the run-down tavern. The bartender greets you with a nod. The tavern is dimly lit, with a few patrons scattered around.
+
+[[Talk to the bartender|Bartender]]
+[[Look around|Tavern Description]]
+[[Check your inventory|Inventory]]
+
+
+:: Tavern Description {"position":"1875,775","size":"100,100"}
+The tavern has old wooden tables, a dusty bar, and a few patrons quietly drinking. There's a sense of history and weariness in the air.
+
+[[Return to the tavern|Tavern]]
+[[Check your inventory|Inventory]]
+
+
+:: Town Exploration {"position":"1825,500","size":"100,100"}
+You arrive at a run-down town. There are two places you can explore:
+
+* [[Enter the tavern|Tavern]]
+* [[Enter the corner shop|Corner Shop]]
+[[Check your inventory|Inventory]]
+
+
+:: Town History {"position":"1650,875","size":"100,100"}
+The bartender tells you that the town was once prosperous before the explosion. Now, it's a shadow of its former self.
+
+[[Return to the tavern|Tavern]]
+[[Ask more questions|AskMore]]
+[[Check your inventory|Inventory]]
+
+
+:: TunnelEntrance {"position":"1650,1125","size":"100,100"}
+
+The warmth of the tavern fades as you step into the back. The air grows cooler, and the light dims. You pass rows of old barrels stacked against the walls, their wood swollen with age and the scent of stale ale. Cobwebs cling to the corners, and your boots crunch softly on the dusty stone floor.
+
+At the end of the corridor, the bartender stops beside a heavy wooden door, slightly ajar. Beyond it, a tunnel stretches into darkness, lit only by the faintest glimmer of torchlight.
+
+He glances back at you. “What you’re about to see… changes everything.”
+
+**To be continued.**
+
+
+
+:: Warrior {"position":"625,600","size":"100,100"}
+
+<img src="https://i.postimg.cc/xCJS34bX/Warrior.jpg" alt="Warrior" style="width:400px; display:block; margin:auto; margin-top:20px;" />
+(set: $characterType to "Warrior")
+(set: $playerHP to 100)
+(set: $playerDamage to 25)
+(set: $heavyAttack to 40)
+(set: $heavyAttackCooldown to 0)
+(set: $defensiveStance to 10)
+(set: $inventory to (array: "Sword", "Shield", "Meat", "Meat", ""))
+You are a Warrior, skilled in combat and defense. Your journey begins now.
+
+[[Choose your faction|Faction Selection]]
+[[Go back|Character Selection]]
